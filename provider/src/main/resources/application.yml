@@ -1,11 +1,13 @@
 server:
   port: 8081
 
+# Mybatis 配置
 mybatis:
   type-aliases-package: com.zhao.pojo
   mapper-locations: classpath:mybatis/mapper/*.xml
   config-location: classpath:mybatis-config.xml
 
+# Spring 配置
 spring:
   application:
     name: provider
@@ -15,3 +17,17 @@ spring:
     url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=utf8
     username: root
     password: 12345678
+
+# Eureka 配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: springcloud-provider-8081  # 修改默认的描述信息
+
+# actuator/info 配置
+info:
+  app.name: springcloud-provider-dept
+  company.name: hao.blog
+
