@@ -30,7 +30,9 @@ public class DeptController {
     @GetMapping("/dept/get/{id}")
     public Dept getDept(@PathVariable("id") Long id) {
         // 根据提供者名称获取服务的访问路径
-        REST_URL_PREFIX = client.getInstances("provider").get(0).getUri().toString();
+        //REST_URL_PREFIX = client.getInstances("provider").get(0).getUri().toString();
+        REST_URL_PREFIX = "http://provider";
+        System.out.println("REST_URL_PREFIX ==> " + REST_URL_PREFIX);
         return restTemplate.getForObject(REST_URL_PREFIX+"/dept/get/"+id, Dept.class);
     }
 
