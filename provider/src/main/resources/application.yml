@@ -17,6 +17,15 @@ spring:
     url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=utf8
     username: root
     password: 12345678
+  zipkin:  # sleuth + zipkin 配置
+    sender:
+      type: web
+    base-url: http://localhost:9411/
+    service:
+      name: provider
+  sleuth:
+    sampler:
+      probability: 1
 
 # Eureka 配置
 eureka:
@@ -25,6 +34,7 @@ eureka:
       defaultZone: http://localhost:7001/eureka
   instance:
     instance-id: springcloud-provider-8081  # 修改默认的描述信息
+    prefer-ip-address: true
 
 
 # actuator/info 配置
