@@ -1,0 +1,9 @@
+# 系统级别的配置
+
+spring:
+  cloud:
+    config:
+      uri: http://localhost:3344  # 从 config 服务器获取
+      name: config-client  # 需要读取的资源名称
+      profile: test
+      label: main

@@ -1,0 +1,20 @@
+
+server:
+  port: 3344
+
+spring:
+  application:
+    name: configServer
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/haozhangms/SpringCloudConfig.git  # repo 地址
+          default-label: main  # Github 默认分支改为 main，但这里默认仍为 master
+          skip-ssl-validation: true
+
+# Eureka 配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
